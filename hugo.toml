@@ -3,6 +3,13 @@ languageCode = "en-us"
 title = "x7c0de0x"
 theme = "hello-friend-ng"
 
+[menu]
+  [[menu.main]]
+    identifier = "writeups"
+    name = "Writeups"
+    url = "/posts/"
+    weight = 1
+
 [params]
   defaultTheme = "dark"
   themeColor = "orange"

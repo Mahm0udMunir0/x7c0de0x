@@ -1,0 +1,256 @@
+/* ==========================================================================
+   x7c0de0x — Gruvbox Dark Custom Theme
+   Overrides for Hello Friend NG
+   ========================================================================== */
+
+/* ---------- Gruvbox Dark Palette ---------- */
+:root {
+  --gruvbox-bg:       #282828;
+  --gruvbox-bg-soft:  #32302f;
+  --gruvbox-bg1:      #3c3836;
+  --gruvbox-bg2:      #504945;
+  --gruvbox-fg:       #ebdbb2;
+  --gruvbox-fg-dim:   #a89984;
+  --gruvbox-red:      #fb4934;
+  --gruvbox-green:    #b8bb26;
+  --gruvbox-yellow:   #fabd2f;
+  --gruvbox-orange:   #fe8019;
+  --gruvbox-blue:     #83a598;
+  --gruvbox-purple:   #d3869b;
+  --gruvbox-aqua:     #8ec07c;
+}
+
+/* ---------- Global Background & Typography ---------- */
+body {
+  background-color: var(--gruvbox-bg) !important;
+  color: var(--gruvbox-fg) !important;
+
+  /* Anime background with dark overlay */
+  background-image:
+    linear-gradient(
+      rgba(40, 40, 40, 0.88),
+      rgba(40, 40, 40, 0.92)
+    ),
+    url("/anime-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: normal;
+}
+
+[data-theme="dark"] body,
+body {
+  background-color: var(--gruvbox-bg) !important;
+  color: var(--gruvbox-fg) !important;
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--gruvbox-orange) !important;
+  text-decoration: none;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--gruvbox-green) !important;
+  text-shadow: 0 0 8px rgba(184, 187, 38, 0.4);
+}
+
+/* ---------- Header ---------- */
+.header {
+  background-color: rgba(29, 32, 33, 0.85) !important;
+  border-bottom: 1px solid var(--gruvbox-bg2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* Entry animation */
+  animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.header .header__right a,
+.header .logo a {
+  color: var(--gruvbox-fg) !important;
+}
+
+.header .header__right a:hover,
+.header .logo a:hover {
+  color: var(--gruvbox-orange) !important;
+}
+
+/* ---------- Menu ---------- */
+.menu a {
+  color: var(--gruvbox-fg) !important;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--gruvbox-orange) !important;
+}
+
+.menu .menu__trigger {
+  color: var(--gruvbox-fg) !important;
+}
+
+/* ---------- Posts / List ---------- */
+.post,
+.posts-list .post-list-item,
+.post-content {
+  animation: fadeSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stagger child posts */
+.posts-list .post-list-item:nth-child(1) { animation-delay: 0.05s; }
+.posts-list .post-list-item:nth-child(2) { animation-delay: 0.10s; }
+.posts-list .post-list-item:nth-child(3) { animation-delay: 0.15s; }
+.posts-list .post-list-item:nth-child(4) { animation-delay: 0.20s; }
+.posts-list .post-list-item:nth-child(5) { animation-delay: 0.25s; }
+.posts-list .post-list-item:nth-child(6) { animation-delay: 0.30s; }
+
+.post h1,
+.post h2,
+.post h3,
+.post h4 {
+  color: var(--gruvbox-fg) !important;
+}
+
+.post h2 {
+  border-bottom: 1px solid var(--gruvbox-bg2);
+  padding-bottom: 0.3em;
+}
+
+/* ---------- Code Blocks ---------- */
+code {
+  background: var(--gruvbox-bg1) !important;
+  color: var(--gruvbox-green) !important;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+pre {
+  background-color: var(--gruvbox-bg-soft) !important;
+  border: 1px solid var(--gruvbox-bg2);
+  border-radius: 8px;
+}
+
+pre code {
+  background: transparent !important;
+  color: var(--gruvbox-fg) !important;
+}
+
+/* ---------- Blockquotes ---------- */
+blockquote {
+  border-left-color: var(--gruvbox-orange);
+  background: rgba(60, 56, 54, 0.5);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 20px;
+}
+
+/* ---------- Horizontal Rules ---------- */
+hr {
+  background: var(--gruvbox-bg2) !important;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  color: var(--gruvbox-fg-dim) !important;
+}
+
+.footer a {
+  color: var(--gruvbox-orange) !important;
+}
+
+/* ---------- Tags ---------- */
+.tags a,
+.post-tags a {
+  background: var(--gruvbox-bg1);
+  color: var(--gruvbox-green) !important;
+  border: 1px solid var(--gruvbox-bg2);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tags a:hover,
+.post-tags a:hover {
+  background: var(--gruvbox-orange);
+  color: var(--gruvbox-bg) !important;
+  border-color: var(--gruvbox-orange);
+}
+
+/* ---------- Table of Contents ---------- */
+.toc {
+  background: var(--gruvbox-bg-soft);
+  border: 1px solid var(--gruvbox-bg2);
+  border-radius: 8px;
+  padding: 1em;
+}
+
+.toc a {
+  color: var(--gruvbox-fg-dim) !important;
+}
+
+.toc a:hover {
+  color: var(--gruvbox-orange) !important;
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: var(--gruvbox-orange);
+  color: var(--gruvbox-bg);
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gruvbox-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gruvbox-bg2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gruvbox-orange);
+}
+
+/* ---------- Bold / Italic ---------- */
+em, i, strong, b {
+  color: var(--gruvbox-fg) !important;
+}
+
+strong, b {
+  color: var(--gruvbox-yellow) !important;
+}
+
+/* ==========================================================================
+   Keyframe Animations
+   ========================================================================== */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -12,4 +12,5 @@ theme = "hello-friend-ng"
 
 [params]
   defaultTheme = "dark"
-  themeColor = "orange"
+  themeColor = "#fe8019"
+  customCSS = ["/css/custom.css"]

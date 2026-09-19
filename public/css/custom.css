@@ -24,12 +24,14 @@
 body {
   background-color: var(--gruvbox-bg) !important;
   color: var(--gruvbox-fg) !important;
+  padding-top: 60px !important;
 }
 
 [data-theme="dark"] body,
 body {
   background-color: var(--gruvbox-bg) !important;
   color: var(--gruvbox-fg) !important;
+  padding-top: 60px !important;
 }
 
 /* ---------- Links ---------- */
@@ -45,39 +47,163 @@ a:focus {
   text-shadow: 0 0 8px rgba(184, 187, 38, 0.4);
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header / Navbar ---------- */
 .header {
-  background-color: rgba(29, 32, 33, 0.85) !important;
-  border-bottom: 1px solid var(--gruvbox-bg2);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(30, 30, 30, 0.75) !important;
+  border-bottom: none;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  padding: 0 20px;
+  box-shadow:
+    0 1px 0 0 rgba(254, 128, 25, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.35);
 
   /* Entry animation */
   animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.header .header__right a,
+/* Glowing accent line at the bottom */
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gruvbox-orange) 20%,
+    var(--gruvbox-yellow) 50%,
+    var(--gruvbox-orange) 80%,
+    transparent 100%
+  );
+  opacity: 0.7;
+}
+
+.header .header__inner {
+  width: 860px;
+  max-width: 100%;
+  padding: 12px 0;
+}
+
+/* --- Logo --- */
+.header .logo {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+}
+
 .header .logo a {
   color: var(--gruvbox-fg) !important;
+  text-decoration: none !important;
 }
 
-.header .header__right a:hover,
 .header .logo a:hover {
-  color: var(--gruvbox-orange) !important;
-}
-
-/* ---------- Menu ---------- */
-.menu a {
   color: var(--gruvbox-fg) !important;
-  transition: color 0.2s ease;
+  text-shadow: none;
 }
 
-.menu a:hover {
+.header .logo__mark {
   color: var(--gruvbox-orange) !important;
+  font-weight: 700;
+  margin-right: 2px;
 }
 
-.menu .menu__trigger {
-  color: var(--gruvbox-fg) !important;
+.header .logo__cursor {
+  background: var(--gruvbox-orange) !important;
+}
+
+/* --- Menu Links --- */
+.menu {
+  background: transparent !important;
+}
+
+.menu .menu__inner {
+  gap: 4px;
+  padding: 0;
+}
+
+.menu .menu__inner li {
+  margin: 0;
+}
+
+.menu a,
+.menu .menu__inner a {
+  color: var(--gruvbox-fg-dim) !important;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.15s ease;
+  position: relative;
+}
+
+.menu a:hover,
+.menu .menu__inner a:hover {
+  color: var(--gruvbox-orange) !important;
+  background-color: rgba(254, 128, 25, 0.1);
+  text-decoration: none !important;
+  text-shadow: none;
+  transform: translateY(-1px);
+}
+
+.menu a:active,
+.menu .menu__inner a:active {
+  transform: translateY(0);
+}
+
+/* Active page indicator — works with Hello Friend NG active class */
+.menu a[aria-current="page"],
+.menu .menu__inner li.active a {
+  color: var(--gruvbox-orange) !important;
+  background-color: rgba(254, 128, 25, 0.12);
+}
+
+/* Mobile hamburger */
+.menu-trigger svg {
+  fill: var(--gruvbox-fg) !important;
+  transition: fill 0.2s ease;
+}
+
+.menu-trigger:hover svg {
+  fill: var(--gruvbox-orange) !important;
+}
+
+@media (max-width: 684px) {
+  .menu {
+    background: rgba(30, 30, 30, 0.95) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--gruvbox-bg2);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    top: 56px;
+    right: 12px;
+    padding: 8px;
+  }
+
+  .menu .menu__inner {
+    gap: 2px;
+  }
+
+  .menu a,
+  .menu .menu__inner a {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 6px;
+  }
 }
 
 /* ---------- Posts / List ---------- */

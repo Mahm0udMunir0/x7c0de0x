@@ -10,9 +10,23 @@
 		
 		
 		
-			<lastBuildDate>Sat, 19 Sep 2026 19:33:17 +0300</lastBuildDate>
+			<lastBuildDate>Sat, 19 Sep 2026 21:20:00 +0300</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>About</title>
+				<link>http://localhost:1313/about/</link>
+				<pubDate>Sat, 19 Sep 2026 21:20:00 +0300</pubDate>
+				<guid>http://localhost:1313/about/</guid>
+				<description>&lt;h2 id=&#34;who-am-i&#34;&gt;Who Am I&lt;/h2&gt;&#xA;&lt;p&gt;Security researcher and bug bounty hunter. I break things to make them safer.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-i-do&#34;&gt;What I Do&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Bug Bounty Hunting&lt;/li&gt;&#xA;&lt;li&gt;CVE Research &amp;amp; Analysis&lt;/li&gt;&#xA;&lt;li&gt;Penetration Testing&lt;/li&gt;&#xA;&lt;li&gt;Security Writeups &amp;amp; Documentation&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Contact Us</title>
+				<link>http://localhost:1313/contact/</link>
+				<pubDate>Sat, 19 Sep 2026 21:20:00 +0300</pubDate>
+				<guid>http://localhost:1313/contact/</guid>
+				<description>&lt;h2 id=&#34;get-in-touch&#34;&gt;Get In Touch&lt;/h2&gt;&#xA;&lt;p&gt;Feel free to reach out for collaboration, bug bounty inquiries, or security consulting.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: &lt;a href=&#34;mailto:your@email.com&#34;&gt;your@email.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/x7c0de0x&#34;&gt;github.com/x7c0de0x&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Twitter/X&lt;/strong&gt;: &lt;a href=&#34;https://twitter.com/x7c0de0x&#34;&gt;@x7c0de0x&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
 			<item>
 				<title>First Report</title>
 				<link>http://localhost:1313/posts/first-report/</link>

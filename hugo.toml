@@ -1,0 +1,8 @@
+baseURL = "https://x7c0de0x.tech/"
+languageCode = "en-us"
+title = "x7c0de0x"
+theme = "hello-friend-ng"
+
+[params]
+  defaultTheme = "dark"
+  themeColor = "orange"
